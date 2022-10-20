@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+header{width : 1920px; height : 200px; margin : 0 auto; background: black; color : white; 
+	display:flex; justify-content: center; align-items: center; font-weight: bold; font-size: 30px;
+	}
+

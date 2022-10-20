@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<link href = "write.css" rel="stylesheet">
+	
+</head>
+<body>	
+	<header>
+		<div>
+			<h3>비회원제 게시판</h3>
+		</div>
+	</header>
+	
+	<div>
+		<div id="section_write">
+			<div>
+				제목 : <input type="text" class="title">
+			</div>
+			<div>
+				내용 : <textarea rows="10" cols="200" class="content"></textarea>
+			</div>
+			<div>
+				작성자 : <input type="text" class="writer">
+			</div>
+			<div>
+				비밀번호 : <input type="text" class="password">
+			</div>
+			<button type="button" onclick="addContent()">글 등록</button>
+			<!-- 함수이름 write() 사용 시 document.write() 뭐시기 오류 나옴. js에서만 addcontent사용()  -->
+		</div>
+		
+		<div><a href="../list/list.html">목록보기</a></div>
+	</div>
+	
+	
+	<footer>
+	
+	
+	</footer>
+	
+	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="write.js"></script>
+</body>
+</html>

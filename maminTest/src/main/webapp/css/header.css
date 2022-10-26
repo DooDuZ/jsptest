@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+*{ margin : 0; padding : 0; box-sizing: border-box; font-family: Cafe24Ssurround;}
+a{text-decoration: none; color : black;}
+li{list-style: none;}
+
+header{ height : 13vh;  background-color: #C7F2A4; display: flex; justify-content: center; align-items: center;}
+.hd_box{ width : 1280px; height: 10vh; display : flex; justify-content: space-between;}
+.h_menu{display : flex; flex-direction: column;}
+.h_menu ul{display : flex; justify-content: flex-end;}
+.h_menu li{ margin-left : 20px;}
+
+
+.h_menu_btm{font-size : 30px;}

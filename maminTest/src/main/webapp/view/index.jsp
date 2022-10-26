@@ -14,7 +14,10 @@
 	
 	<div class="container">
 		<div class="m_main_img">
-		<h3 class="m_main_text">마블의 민족</h3>
+			<div class="m_logobox">
+				<h3 class="m_main_text">마블의 민족</h3>
+				<img src="../img/지구졸라맨.png">
+			</div>
 		</div>
 	</div>
 	

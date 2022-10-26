@@ -15,9 +15,11 @@
 	background-repeat: no-repeat;
 }
 
+.m_logobox{display : flex; flex-direction: column; justify-content: center; align-items: center; padding-top : 70px;}
 
-.m_main_text{text-align : center; padding-top : 70px;
-	color : #1c3761; font-size : 100px;
-	font-family: 'SDSamliphopangche_Outline'
+.m_main_text{
+	color : #1c3761; font-size : 80px;
+	font-family: 'SDSamliphopangche_Outline';
 }
 
+.m_logobox img{ width : 100px; }

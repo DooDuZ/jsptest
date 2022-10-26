@@ -19,12 +19,13 @@
 	<header>
 		<div class="hd_box">
 			<div class="h_logo">
+				<img src="/maminTest/img/비행기.png">
 				<h3>마블의 민족</h3>
 			</div>
 			<div class="h_menu">
 			<% if(loginID==null){ %>
 				<ul class="h_menu_top">
-					<li><a href="">로그인</a></li>
+					<li><a href="index.jsp">로그인</a></li>
 					<li><a href="">회원가입</a></li>
 				</ul>
 			<% }else{ %>
@@ -42,7 +43,9 @@
 				</ul>
 			</div>
 		</div>
-	</header>	
+	</header>
+	
+
 	<!-- 부트스트랩 -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 	<!-- JQUERY 라이브러리 -->

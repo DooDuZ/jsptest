@@ -11,6 +11,7 @@
 <!-- 폰트어썸 -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
 <title>마블으민족</title>
+	<link rel="stylesheet" href="https://unpkg.com/destyle.css@1.0.5/destyle.css">
 	<link href="../css/header.css" rel="stylesheet">
 </head>
 <body>
@@ -25,7 +26,7 @@
 			<div class="h_menu">
 			<% if(loginID==null){ %>
 				<ul class="h_menu_top">
-					<li><a href="index.jsp">로그인</a></li>
+					<li><a href="">로그인</a></li>
 					<li><a href="">회원가입</a></li>
 				</ul>
 			<% }else{ %>
@@ -45,6 +46,9 @@
 		</div>
 	</header>
 	
+	<footer>
+		
+	</footer>
 
 	<!-- 부트스트랩 -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>

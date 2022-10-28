@@ -6,10 +6,10 @@
     font-weight: normal;
     font-style: normal;
 }
-
+.container{width : 1280px; height : 74vh; margin : 0 auto;}
 .m_main_img{position : relative; background-image: url("../img/뉴욕.png");
 	width : 100%;
-	height : 80%;
+	height : 100%;
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -18,8 +18,11 @@
 .m_logobox{display : flex; flex-direction: column; justify-content: center; align-items: center; padding-top : 70px;}
 
 .m_main_text{
-	color : #1c3761; font-size : 80px;
+	color : #1c3761; font-size : 100px;
 	font-family: 'SDSamliphopangche_Outline';
 }
-
-.m_logobox img{ width : 100px; }
+.character{ width : 100px; }
+.btn_box{display : flex; justify-content: center; align-items: center; margin-top : 30px;}
+.startbtn{font-size : 70px; cursor : pointer; font-family: 'SDSamliphopangche_Outline'; color : #1c3761;
+	border : 5px solid #1c3761; border-radius: 50px; padding : 10px;
+}

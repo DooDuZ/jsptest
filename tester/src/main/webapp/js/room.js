@@ -22,18 +22,19 @@ if(m_id !== 'null'){
 	websocket.onerror = (e)=>{onerror(e)};
 }else{
 	alert('로그인 후 이용해주세요.');
-	location.href = '/mamin/view/login.jsp';
+	location.href = '/tester/view/login.jsp';
 }
 
 //20221029[지웅] websocket 기본 function에 대입할 기능 구현
 function onopen(e){}
-function onclose(){}
+function onerror(e){ alert(e) }
+function onclose(e){ alert('저 갑니다!') }
 function onmessage(obj){
 	let parsing = JSON.parse(obj.data);
 	console.log(parsing);
 	if(parsing.function_name==='addPlayer'){
 		addPlayer(parsing);
-	}	
+	}
 }
 
 function send(object){

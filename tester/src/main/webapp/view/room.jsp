@@ -15,7 +15,7 @@
 	<div class="wrap">
 		<div class="room_wrapper">
 			<div class="room_info">
-				부동산은 승리한다
+				마블의 민족!
 			</div>
 			<table class="slot_box">
 				<tr class="player_slot r_slot1">
@@ -31,20 +31,16 @@
 					<td class="r_ready_box"></td>
 				</tr>
 				<tr class="player_slot r_slot3">
-					<td class="r_p_img">
-						<img src="/tester/img/member/아가양.jpg">
-					</td>
-					<td class="r_name_box">두두지</td>
-					<td class="r_winrate">승률 97%</td>
-					<td class="r_ready_box">Ready</td>
+					<td class="r_p_img"></td>
+					<td class="r_name_box"></td>
+					<td class="r_winrate"></td>
+					<td class="r_ready_box"></td>
 				</tr>
 				<tr class="player_slot r_slot4">
-					<td class="r_p_img">
-						<img src="/tester/img/member/아가양.jpg">
-					</td>
-					<td class="r_name_box">두두지</td>
-					<td class="r_winrate">승률 97%</td>
-					<td class="r_ready_box">Ready</td>
+					<td class="r_p_img"></td>
+					<td class="r_name_box"></td>
+					<td class="r_winrate"></td>
+					<td class="r_ready_box"></td>
 				</tr>
 			</table>
 			<div class="chatbox">

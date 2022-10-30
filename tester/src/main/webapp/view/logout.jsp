@@ -13,7 +13,7 @@
 		session.setAttribute("m_no", null);	//특정 세션만 제거
 		
 		//페이지 전환 [메인페이지 이동]
-		response.sendRedirect("/mamin/view/index.jsp");
+		response.sendRedirect("/tester/view/index.jsp");
 	%>
 </body>
 </html>

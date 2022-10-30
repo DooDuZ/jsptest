@@ -1,7 +1,7 @@
 package tester.model.dto;
 
 public class PlayerDto {
-	int p_no;
+	int s_no;
 	String m_nick;
 	String m_img;
 	int wins;
@@ -11,21 +11,21 @@ public class PlayerDto {
 		// TODO Auto-generated constructor stub
 	}
 
-	public PlayerDto(int p_no, String m_nick, String m_img, int wins, int total) {
+	public PlayerDto(int s_no, String m_nick, String m_img, int wins, int total) {
 		super();
-		this.p_no = p_no;
+		this.s_no = s_no;
 		this.m_nick = m_nick;
 		this.m_img = m_img;
 		this.wins = wins;
 		this.total = total;
 	}
 
-	public int getP_no() {
-		return p_no;
+	public int getS_no() {
+		return s_no;
 	}
 
-	public void setP_no(int p_no) {
-		this.p_no = p_no;
+	public void setS_no(int s_no) {
+		this.s_no = s_no;
 	}
 
 	public String getM_nick() {
@@ -62,7 +62,9 @@ public class PlayerDto {
 
 	@Override
 	public String toString() {
-		return "PlayerDto [p_no=" + p_no + ", m_nick=" + m_nick + ", m_img=" + m_img + ", wins=" + wins + ", total="
+		return "PlayerDto [s_no=" + s_no + ", m_nick=" + m_nick + ", m_img=" + m_img + ", wins=" + wins + ", total="
 				+ total + "]";
-	}	
+	}
+
+	
 }

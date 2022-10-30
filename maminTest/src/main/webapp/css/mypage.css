@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+*{ font-family: 'SDSamliphopangche_Outline'; }
+
+.webbox{
+	padding-top: 20px;
+}
+
+.mypageform{				/* form */
+	width: 750px;			/* 가로사이즈 */
+	margin: 0 auto;			/* 박스권 가운데 정렬 */
+}
+
+.mypagetable{				/* table */
+	width: 100%;
+	border-top: black 2px solid; border-collapse: collapse;
+	border-bottom: black 2px solid;
+}
+
+.mypagetable input:not(.characterbtn){			/* table 안에 있는 input */
+	width: 100%; height:35px; 
+	border: #d8d8d8 1px solid; padding-left: 15px;
+}
+
+.mypagetable td{			/* table td */
+	border-bottom: #d8d8d8 1px solid;
+	padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.col1{ width: 20%; background-color: #E1FFB1; }
+.col2{ width: 50%; }
+.col3{ width: 30%; }
+
+.characters input{
+	margin-left: 5px;
+}
+
+.mypagebtnbox{
+	display: flex;			/* 균등배치를 위해서 */
+	justify-content: center;
+}
+
+.mypagebtnbox button{
+	width: 150px; margin: 35px 10px;
+	padding: 10px; color: black;
+	border: none;
+}
+
+.mypagebtnbox button:nth-child(1){		/* 첫번째 버튼 */
+	background-color: #E1FFB1;
+}
+.mypagebtnbox button:nth-child(2){		/* 두번째 버튼 */
+	background-color: #C7F2A4;
+}
+

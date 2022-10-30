@@ -1,0 +1,253 @@
+@charset "UTF-8";
+
+
+/*글씨체 임의 지정*/
+@font-face {
+    font-family: 'HS-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/HS-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/*------------------- 게임판 플레이어 정보 -----------------------------*/
+
+.gameboard{	/*보드판 전체*/
+	position: relative;
+	width: 1800px;
+	margin: 0 auto;
+	font-family: "GangwonEdu_OTFBoldA";
+}
+.player1_info{ /*플레이어1 정보칸*/
+	border: 1px solid black;
+	position: absolute;
+	top:90px;
+	left:30px;
+	width: 300px;
+}
+
+.player2_info{ /*플레이어2 정보칸*/
+	border: 1px solid black;
+	position: absolute;
+	top:90px;
+	right:30px;
+	width: 300px;
+}
+.player3_info{ /*플레이어3 정보칸*/
+	border: 1px solid black;
+	position: absolute;
+	bottom:90px;
+	left:30px;
+	width: 300px;
+}
+.player4_info{ /*플레이어4 정보칸*/
+	border: 1px solid black;
+	position: absolute;
+	bottom:90px;
+	right:30px;
+	width: 300px;
+}
+.g_intro{/*플레이어 닉네임, 자산 들어갈 칸*/
+	display: flex;
+	flex-direction:column;
+	justify-content: space-around;
+	text-align: center;
+	height: 160px;
+	font-size: 20px;
+}
+.g_m_nick{ /*닉네임칸*/
+	font-family: "HS-Regular";
+	font-size: 40px;
+
+}
+.g_money{ /*순자산 칸*/
+	font-weight: bold;
+	font-size: 30px;
+}
+.g_m_img{ /*플레이어 프로필 이미지*/
+	float: left;
+}
+
+/*---------------- 게임판 박스 -----------------------*/
+.boardbox {
+	display: grid;
+	grid-template-columns: 130px repeat(7, 115px) 130px; /*각각 그리드비율 정하기*/
+	grid-template-rows: 130px repeat(7, 115px) 130px;
+	grid-gap: 2px;	/*그리드간 간격*/
+	margin: 50px auto;
+	width: 1110px;
+	height: 1110px;
+	border: 2px solid black;
+}
+
+/*---------------- 게임판 가운데 -----------------------*/
+.b_center { /*게임판 가운데*/
+	grid-column: 2 / 9;
+	grid-row: 2 / 9;
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	grid-template-rows: repeat(7, 1fr);
+	justify-items: center;
+	align-items: center;
+}
+/*---------------- 4방향 줄 -----------------------*/
+.row {display: grid; grid-gap: 2px;}
+
+.h_row { /*가로 게임칸*/
+	grid-template-columns: repeat(7, 115px);
+	grid-template-rows: 130px;
+}
+
+.v_row {  /*세로 게임칸*/
+	grid-template-columns: 130px;
+	grid-template-rows: repeat(7, 115px);
+}
+
+.bottom_row {/*아랫줄*/
+	grid-column: 2 / 9;  	/*grid-column : 시작번호/끝번호*/
+	grid-row: 9/9;    		/*grid-row : 두고 싶은 row 줄 위치*/
+
+}
+
+ /*왼쪽 줄*/
+.left_row {grid-column: 1; grid-row: 2 / 9;}
+.left_row .g_space{transform: translate(-50%, -50%) rotate(90deg);}
+ /*오른쪽 줄*/
+.right_row {grid-column: 9;grid-row: 2 / 9;}
+.right_row .g_space{transform: translate(-50%, -50%) rotate(270deg);}
+.v_row .g_space{top: 50%;left: 50%;}
+ /*윗 줄*/
+.top_row {grid-column: 2 / 9; grid-row: 1; }
+
+
+/*칸 공간*/
+.g_space {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
+	transform-origin: center;
+	height: 155px;
+	width: 110px;
+}
+
+/*------------ 게임 시작칸 ------------------------*/
+.b_start {
+	grid-column: 9/10;
+	grid-row: 9/10;
+	width: 135px;
+}
+.b_start .g_space{justify-content: flex-start;}
+
+/*--------------- 무인도 --------------------*/
+.b_island{
+	grid-column: 9;
+	grid-row: 1;
+	display: grid;
+	justify-content: center;
+	align-items: center;
+}
+
+/*------------------ 올림픽 -----------------------*/
+.b_olympic{grid-column: 1;grid-row: 1 / 1;}
+
+/*------------------ 세계여행 -----------------------*/
+.b_travle{grid-column: 1;grid-row:9;}
+
+
+/*-------------------- 게임칸 정보 관련 -------------------------*/
+.b_house{/*게임판 건물 아이콘*/
+	text-align: center; font-size: 20px;
+}
+.location i{ /*게임판 플레이어 아이콘*/
+	padding:0 6px;
+	font-size: 25px;
+}
+/*플레이어 아이콘 - 색깔은 임의 지정함 나중에 회의하고 바꿀예정!*/
+.player1_icon{color: #8BBCCC;}
+.player2_icon{color: #42855B;}
+.player3_icon{color: #87A2FB;}
+.player4_icon{color: #C689C6;}
+
+
+/*나라명 출력 위치*/
+.n_name{
+	color: black;
+	font-size:20px;
+	text-align: center;
+	padding: 5px;
+	width: 105px;
+	
+}
+/*위아래 양쪽 색깔 다르게*/
+.right_row .g_space{border: 3px solid #ECC5FB;}
+.right_row .n_name{background-color: #ECC5FB;}
+
+.top_row .g_space{border: 3px solid #B1B2FF;}
+.top_row .n_name{background-color: #B1B2FF;}
+
+.left_row .g_space{border: 3px solid #FCFFB2;}
+.left_row .n_name{background-color: #FCFFB2;}
+
+.bottom_row .g_space{border: 3px solid #5DA7DB;}
+.bottom_row .n_name{background-color: #5DA7DB;}
+
+/* 통행료 출력 위치 */
+.n_payment{
+	font-size: 20px;
+	text-align: center;
+}
+
+/*주사위 출력 부분*/
+.b_diceContent{
+  grid-column: 4;
+  grid-row: 3;	
+  display: flex;
+}
+.b_diceContent img{width: 150px; height: 150px;}
+
+/*주사위 굴리기 버튼*/
+.diceBtn {
+  grid-column: 4;
+  grid-row: 5;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  line-height: 50px;
+  height: 50px;
+  text-align: center;
+  font-size:20px;
+  width: 200px;
+  cursor: pointer;
+  color: #FFF;
+  transition: all 0.3s;
+  position: relative;
+  background-color: #B6E388; 
+}
+
+.diceBtn span {transition: all 0.3s;}
+
+.diceBtn:hover span {letter-spacing: 2px;}
+.diceBtn:hover::before {
+  opacity: 1; 
+  transform: scale(1, 1); 
+}
+.diceBtn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+  background-color: rgba(255,255,255,0.25);
+}
+.diceBtn:hover::after {
+  opacity: 0; 
+  transform: scale(0.1, 1);
+}

@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+.webbox{
+	padding-top: 20px;
+}
+
+.signupform{				/* form */
+	width: 800px;			/* 가로사이즈 */
+	margin: 0 auto;			/* 박스권 가운데 정렬 */
+}
+
+.signuptable{				/* table */
+	width: 100%;
+	border-top: black 2px solid; border-collapse: collapse;
+}
+
+.signuptable input:not(.characterbtn){			/* table 안에 있는 input */
+	width: 100%; height:35px; 
+	border: #d8d8d8 1px solid; padding-left: 15px;
+}
+
+.signuptable td{			/* table td */
+	border-bottom: #d8d8d8 1px solid;
+	padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+/* table 열 사이즈 */
+.col1{ width: 20%; background-color: #f7f7f7; }
+.col2{ width: 50%; }
+.col3{ width: 30%; font-size: 12px; }
+
+/* 주소 2열 */
+.col2 span{
+	display: flex;
+	margin-bottom: 10px;
+}
+
+/* 회원가입 버튼 구역 */
+.signupbtnbox{
+	display: flex;			/* 균등배치를 위해서 */
+	justify-content: center;
+}
+
+/* 회원가입 버튼 */
+.signupbtnbox button{
+	width: 150px; margin: 100px 10px;
+	padding: 10px; color: white;
+	border: none;
+}
+
+.signupbtnbox button:nth-child(1){		/* 첫번째 버튼 */
+	background-color: gray;
+}
+.signupbtnbox button:nth-child(2){		/* 두번째 버튼 */
+	background-color: black;
+}
+
+/* 이용약관 textarea */
+.confirmbox textarea{
+	width: 100%; height: 120px;
+	resize: none;			/* 사이즈 변경 안되도록 */
+	border: 1px solid black;
+}
+
+.confirmbox input{
+	zoom: 1.5;				/* 체크박스의 크기 [배율] */
+	margin-bottom: 20px;
+}
+
+.confirmbox span{
+	font-size: 15px;
+	vertical-align: top;
+}
+
+
+/* 유효성 검사 아이콘 */
+.fa-check-circle{ color: green; font-size: 20px; }
+.fa-ban{ color: red; font-size: 20px; }
+
+

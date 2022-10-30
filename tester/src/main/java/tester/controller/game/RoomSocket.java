@@ -18,7 +18,10 @@ import javax.websocket.*;
 
 @ServerEndpoint("/room/RoomSocket/{m_id}")
 public class RoomSocket {
-
+	//20221031 01:29 ... 갑자기 많은것이 안되기 시작함
+		// 일단 오늘은 포기ㅠㅠ
+	
+	
 	// 지웅 20221030 방[서버]에 접속한 회원들의 정보 저장용 Hashtable
 	public static Map<Session, String> clients = new Hashtable<>();
 	

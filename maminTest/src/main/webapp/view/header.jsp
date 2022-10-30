@@ -10,7 +10,11 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <!-- 폰트어썸 -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+<<<<<<< HEAD
 <title>마블의 민족</title>
+=======
+<title>마블으민족</title>
+>>>>>>> branch 'master' of https://github.com/DooDuZ/jsptest
 	<link rel="stylesheet" href="https://unpkg.com/destyle.css@1.0.5/destyle.css">
 	<link href="../css/header.css" rel="stylesheet">
 </head>
@@ -28,8 +32,13 @@
 			<div class="h_menu">
 			<% if(loginID==null){ %>
 				<ul class="h_menu_top">
+<<<<<<< HEAD
 					<li><a href="/mamin/view/login.jsp">로그인</a></li>
 					<li><a href="/mamin/view/signup.jsp">회원가입</a></li>
+=======
+					<li><a href="">로그인</a></li>
+					<li><a href="">회원가입</a></li>
+>>>>>>> branch 'master' of https://github.com/DooDuZ/jsptest
 				</ul>
 			<% }else{ %>
 				<ul class="h_menu_top">
@@ -47,6 +56,13 @@
 			</div>
 		</div>
 	</header>
+<<<<<<< HEAD
+=======
+	
+	<footer>
+		
+	</footer>
+>>>>>>> branch 'master' of https://github.com/DooDuZ/jsptest
 
 	<!-- 부트스트랩 -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>

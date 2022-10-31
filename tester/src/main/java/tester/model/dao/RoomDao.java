@@ -82,7 +82,6 @@ public class RoomDao extends Dao{
 					list.add(dto);
 					dto = null;
 				}
-				System.out.println(list.toString());
 				return list;
 			} catch (Exception e) {
 				System.out.println("게임 입장 유저 정보DB 오류" + e);
@@ -94,16 +93,8 @@ public class RoomDao extends Dao{
 		// 20221031 boolean -> slot no 반환되도록 수정
 		// 20221031 13:41 유저 출력방식 변경으로 다시 boolean return하도록 변경 
 	public boolean exitRoom(String m_id) {
-		String sql = "select * from room where m_id = ?";
-		int s_no = 0;
-		try {
-			ps = con.prepareStatement(sql);
-			ps.setString(1, m_id);
-			rs = ps.executeQuery();
-			if(rs.next()) {
-				s_no = rs.getInt(1);
-			}		
-			sql = "update room set slot = false, m_id = null where m_id = ?";
+		String sql = "update room set slot = false, m_id = null where m_id = ?";
+		try {			
 			ps = con.prepareStatement(sql);
 			ps.setString(1, m_id);
 			ps.executeUpdate();

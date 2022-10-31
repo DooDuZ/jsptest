@@ -43,6 +43,7 @@
 					<td class="r_ready_box"></td>
 				</tr>
 			</table>
+			<div><button onclick="exit()" class="exitbtn">나가기</button></div>
 			<div class="chatbox">
 				<div class="chatDisplay"></div>
 				<div class="chatInput">

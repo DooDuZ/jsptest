@@ -79,7 +79,11 @@ function enterKey(){
 }
 
 
-
+// 20221031
+function exit(){
+	onclose();
+	location.href = 'index.jsp';
+}
 
 
 

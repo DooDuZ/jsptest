@@ -73,17 +73,23 @@ public class RoomSocket {
 	@OnOpen
 	public void OnOpen( Session session, @PathParam("m_id") String m_id ) throws IOException  {
 		clients.put(session, m_id);
+		
+		for(Session s : clients.keySet()) {
+			System.out.println(clients.get(s));
+		}		
+		
 		getPlayerInfo();
 	}
 	// 지웅 20221030 유저 퇴장
 	@OnClose
 	public void OnClose( Session session ) throws IOException {
 		System.out.println(clients.get(session)+"퇴장");
+		System.out.println(clients.size());
 		boolean result = RoomDao.getInstance().exitRoom(clients.get(session));
-		getPlayerInfo();
 		if(result) {
-			clients.remove(session);
-		}
+			getPlayerInfo();
+		}		
+		clients.remove(session);
 	}
 	
 	// 지웅 20221030 js에서 send()함수로 서버 접근 시 서버 접속 중인 인원들에게 줄 정보를 js의 OnMessage로 전송

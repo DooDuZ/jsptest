@@ -23,11 +23,9 @@ public class playerCounter extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 방에 참여한 ID인지 체크용
+		// 20221030 방에 참여한 ID인지 체크용
 		String m_id = (String) request.getSession().getAttribute("m_id");
-		
-		int result = RoomDao.getInstance().enterRoom(m_id);
-		
+		int result = RoomDao.getInstance().enterRoom(m_id);		
 		response.getWriter().print(result);
 	}
 

@@ -16,7 +16,7 @@
 				<h3 class="m_main_text">마블의 민족</h3>
 				<img class="character" src="/tester/img/main/지구졸라맨.png">
 				<div class="btn_box">
-					<div class="startbtn" onclick="checkRoom()">Start Game</div>
+					<div class="startbtn" onclick="enterRoom()">Start Game</div>
 				</div>
 			</div>
 		</div>

@@ -10,7 +10,7 @@ public class MemberDto {
 	private String m_nick;		// 닉네임
 	private String m_img ;		// 캐릭터 이미지
 	private String m_profile ;	// 자기소개
-	private int	 wins;			// 1등 횟수
+	private int	wins;			// 1등 횟수
 	private int total ;			//총 게임 횟수
     
     

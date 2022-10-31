@@ -24,8 +24,11 @@ function onmessage(obj){
 	let parsing = JSON.parse(obj.data);
 	console.log(parsing);
 	console.log(parsing.data);
-	if(parsing.function_name=='addplayer'){
+	if(parsing.function_name=='addplayer'){	// 20221031 낮 언젠가... 지웅 추가
 		addPlayer(parsing.data);
+	}else if(parsing.function_name=='exit'){ // 20221031 23:49 지웅 추가
+		alert('남은 자리가 없어요ㅠㅠ')
+		exit();
 	}
 }
 

@@ -13,7 +13,7 @@
 <body>
 	<%@ include file="header.jsp" %>
 	<div class="webbox">
-		<form class="signupform" action="/mamin/member/signup" method="post">
+		<form class="signupform" action="/tester/member/signup" method="post">
 
 			<table class="signuptable">
 				<tr>

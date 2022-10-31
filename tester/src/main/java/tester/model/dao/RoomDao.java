@@ -1,6 +1,7 @@
 package tester.model.dao;
 
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import tester.model.dto.PlayerDto;
 
@@ -44,36 +45,55 @@ public class RoomDao extends Dao{
 		return 0;
 	}
 	// [지웅] 20221030 유저 방 입장시 데이터 출력 -> Room 입장 후 게임 방정보에 표시용
-		public PlayerDto getPlayerInfo(String m_id) {
-			PlayerDto dto = new PlayerDto();
-			String sql = "select * from member where m_id = ? ";
+	
+		//수정중
+			// player 한명 -> player[room에 있는 id]전체
+		public ArrayList<PlayerDto> getPlayerInfo() {
+			ArrayList<PlayerDto> list = new ArrayList<>();
+			ArrayList<String> m_id = new ArrayList<>();
+			PlayerDto dto = null;
+			String sql = "select * from room where m_id is not null";
 			try {
 				ps = con.prepareStatement(sql);
-				ps.setString(1, m_id);
 				rs = ps.executeQuery();
-				if(rs.next()) {
-					dto.setM_nick(rs.getString(6));
-					dto.setM_img(rs.getString(7));
-					dto.setWins(rs.getInt(9));
-					dto.setTotal(rs.getInt(10));
+				while(rs.next()) {
+					m_id.add(rs.getString(3));
 				}
-				sql = "select * from room where m_id =?";
-				ps = con.prepareStatement(sql);
-				ps.setString(1, m_id);
-				rs2 = ps.executeQuery();
-				if(rs2.next()) {
-					dto.setS_no(rs.getInt(1));
+				
+				for(int i = 0 ; i<m_id.size(); i++) {
+					sql = "select * from member where m_id = ? ";
+					ps = con.prepareStatement(sql);
+					ps.setString(1, m_id.get(i));
+					rs = ps.executeQuery();
+					if(rs.next()) {
+						dto = new PlayerDto();
+						dto.setM_nick(rs.getString(6));
+						dto.setM_img(rs.getString(7));
+						dto.setWins(rs.getInt(9));
+						dto.setTotal(rs.getInt(10));
+					}
+					sql = "select * from room where m_id =?";
+					ps = con.prepareStatement(sql);
+					ps.setString(1, m_id.get(i));
+					rs2 = ps.executeQuery();
+					if(rs2.next()) {
+						dto.setS_no(rs.getInt(1));
+					}
+					list.add(dto);
+					dto = null;
 				}
-				return dto;
+				System.out.println(list.toString());
+				return list;
 			} catch (Exception e) {
 				System.out.println("게임 입장 유저 정보DB 오류" + e);
-			}		
+			}
 			return null;
 		}
 	
 	// [지웅] 20221030 방 나가기 -> 나갈 때 html화면 유저슬롯 변경처리 되도록 수정 필요함
 		// 20221031 boolean -> slot no 반환되도록 수정
-	public int exitRoom(String m_id) {
+		// 20221031 13:41 유저 출력방식 변경으로 다시 boolean return하도록 변경 
+	public boolean exitRoom(String m_id) {
 		String sql = "select * from room where m_id = ?";
 		int s_no = 0;
 		try {
@@ -87,12 +107,10 @@ public class RoomDao extends Dao{
 			ps = con.prepareStatement(sql);
 			ps.setString(1, m_id);
 			ps.executeUpdate();
-			return s_no;
+			return true;
 		} catch (Exception e) {
 			System.out.println("방 나가기 DB오류"+e);
 		}
-		return s_no;
-	}
-	
-	
+		return false;
+	}	
 }

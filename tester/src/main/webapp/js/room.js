@@ -1,13 +1,4 @@
-/**
- * 
- */
 
-
-
-/* 
-	Room Page 구현 중 대기 유저 슬롯 구현하느라 채팅에 필요한 기능이 일부 구현되어 있습니다.
-	그러나 대부분 테스트 파일이니, 입맛대로 다 지우시던 활용하시던 갠춘합니다!!	
-*/
 
 // 20221030[지웅] userslot 출력
 let m_id = document.querySelector('.H_idbox').innerHTML;
@@ -27,13 +18,14 @@ if(m_id !== 'null'){
 
 //20221029[지웅] websocket 기본 function에 대입할 기능 구현
 function onopen(e){}
-function onerror(e){ alert(e) }
-function onclose(e){ alert('저 갑니다!') }
+function onerror(e){ alert(e); }
+function onclose(e){ alert('저 갑니다!'); }
 function onmessage(obj){
 	let parsing = JSON.parse(obj.data);
 	console.log(parsing);
-	if(parsing.function_name==='addPlayer'){
-		addPlayer(parsing);
+	console.log(parsing.data);
+	if(parsing.function_name=='addplayer'){
+		addPlayer(parsing.data);
 	}
 }
 
@@ -42,22 +34,35 @@ function send(object){
 }
 
 // 20221029[지웅] 플레이어 입장 / 슬롯에 표시
-function addPlayer(object){
+function addPlayer(array){
+	let blankslot =[false,false,false,false];
 	// OnOpen 에서 입장한 유저 정보와 해당 유저의 slotNo response 받은 후 맞는 위치에 데이터 입력 
-	let win_rate;
-	if(object.total!==0){
-		win_rate = (Number(object.wins) / Number(object.total)) * 100 + '%';
-	}else{
-		win_rate = '전적 없음';
+	for(let i = 0 ; i<array.length ; i++){
+		let object = array[i];
+		blankslot[object.s_no-1] = true;
+		let win_rate;
+		if(object.total!==0){
+			win_rate = (Number(object.wins) / Number(object.total)) * 100 + '%';
+		}else{
+			win_rate = '전적 없음';
+		}
+		document.querySelector(`.r_slot${object.s_no}`).innerHTML = 
+				`<td class="r_p_img">
+					<img src="/tester/img/member/${object.m_img}">
+				</td>
+				<td class="r_name_box">${object.m_nick}</td>
+				<td class="r_winrate">${win_rate}</td>
+				<td class="r_ready_box">Ready</td>`;
 	}
-	
-	document.querySelector(`.r_slot${object.s_no}`).innerHTML = 
-					`<td class="r_p_img">
-						<img src="/tester/img/member/${object.m_img}">
-					</td>
-					<td class="r_name_box">${object.m_nick}</td>
-					<td class="r_winrate">${win_rate}</td>
-					<td class="r_ready_box">Ready</td>`;
+	for(let i = 0 ; i<blankslot.length ; i++){
+		if(!blankslot[i]){
+			document.querySelector(`.r_slot${i+1}`).innerHTML = 
+				`<td class="r_p_img"></td>
+				<td class="r_name_box"></td>
+				<td class="r_winrate"></td>
+				<td class="r_ready_box">입장대기</td>`;
+		}
+	}
 }
 
  
@@ -73,4 +78,9 @@ function enterKey(){
 	document.querySelector('.chatDisplay').scrollTop = document.querySelector('.chatDisplay').scrollHeight;	
 }
 
-//d
+
+
+
+
+
+

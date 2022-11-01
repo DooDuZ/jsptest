@@ -96,8 +96,6 @@ function addPlayer(array){
 				<td class="r_ready_box${i+1}">wait</td>`;
 		}
 	}	
-	
-	
 }
 
  

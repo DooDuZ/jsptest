@@ -43,7 +43,19 @@
 .r_p_img img{width : 50%; border-radius : 100%;}
 .r_name_box{width: 300px; height :  80px; font-family: 'ONE-Mobile-POP'; font-size : 30px; text-align: center; margin : 22px 10px;}
 .r_winrate{width: 100px; height :  80px; font-family: 'ONE-Mobile-POP'; font-size : 20px; text-align: center; margin : 30px;}
-.r_ready_box{width: 150px; height :  80px; font-family: 'ONE-Mobile-POP'; font-size : 40px; text-align: center; padding-left : 250px; padding-right:30px;}
+.r_ready_box{width: 200px; height :  80px; font-family: 'ONE-Mobile-POP'; font-size : 20px; text-align: center; padding-left : 200px; padding-right:30px;}
+
+/* 임시 추가 */
+.r_ready_box1{width: 300px; height :  80px; font-family: 'ONE-Mobile-POP'; font-size : 20px; text-align: center; padding-left : 200px; padding-right:30px;}
+.r_ready_box2{width: 300px; height :  80px; font-family: 'ONE-Mobile-POP'; font-size : 20px; text-align: center; padding-left : 200px; padding-right:30px;}
+.r_ready_box3{width: 300px; height :  80px; font-family: 'ONE-Mobile-POP'; font-size : 20px; text-align: center; padding-left : 200px; padding-right:30px;}
+.r_ready_box4{width: 300px; height :  80px; font-family: 'ONE-Mobile-POP'; font-size : 20px; text-align: center; padding-left : 200px; padding-right:30px;}
+
+/* btnbox */
+.r_btnbox{width : 600px; display : flex; justify-content: space-around; align-items: center;}
+.r_btnbox button{width : 200px; background-color: #283C63; height : 50px; border: none; font-family: 'KOTRAHOPE'; color : white;}
+
+
 
 /* 채팅 박스 */
 .chatbox{margin : 10px 0;}

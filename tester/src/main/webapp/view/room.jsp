@@ -10,7 +10,8 @@
 
 </head>
 <body>
-	<%@ include file="header.jsp" %> <!-- file="jsp파일 주소" -->
+	<%@ include file="header.jsp" %> <!-- file="jsp파일 주소" -->	
+	<div class="r_sno" style="display : none;"></div>
 	
 	<div class="wrap">
 		<div class="room_wrapper">
@@ -22,28 +23,31 @@
 					<td class="r_p_img"></td>
 					<td class="r_name_box"></td>
 					<td class="r_winrate"></td>
-					<td class="r_ready_box"></td>
+					<td class="r_ready_box1"></td>
 				</tr>
 				<tr class="player_slot r_slot2">
 					<td class="r_p_img"></td>
 					<td class="r_name_box"></td>
 					<td class="r_winrate"></td>
-					<td class="r_ready_box"></td>
+					<td class="r_ready_box2"></td>
 				</tr>
 				<tr class="player_slot r_slot3">
 					<td class="r_p_img"></td>
 					<td class="r_name_box"></td>
 					<td class="r_winrate"></td>
-					<td class="r_ready_box"></td>
+					<td class="r_ready_box3"></td>
 				</tr>
 				<tr class="player_slot r_slot4">
 					<td class="r_p_img"></td>
 					<td class="r_name_box"></td>
 					<td class="r_winrate"></td>
-					<td class="r_ready_box"></td>
+					<td class="r_ready_box4"></td>
 				</tr>
 			</table>
-			<div><button onclick="exit()" class="exitbtn">나가기</button></div>
+			<div class="r_btnbox">
+			 	<button onclick="open_game()">게임 시작</button>
+				<button onclick="exit()" class="exitbtn">나가기</button>
+			</div>
 			<div class="chatbox">
 				<div class="chatDisplay"></div>
 				<div class="chatInput">

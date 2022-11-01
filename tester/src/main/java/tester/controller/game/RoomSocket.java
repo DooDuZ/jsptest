@@ -92,11 +92,12 @@ public class RoomSocket {
 		
 		MemberDto dto = RoomDao.getInstance().getPlayerInfo(m_id);
 		players.add(dto);
-		System.out.println(dto);
 		JSONArray array = new JSONArray();
 		for(int i = 0 ; i<players.size() ; i++) {
 			JSONObject object = new JSONObject();
 			object.put("s_no", i+1);
+			object.put("m_no", players.get(i).getM_no());
+			object.put("m_id", players.get(i).getM_id());
 			object.put("m_nick", players.get(i).getM_nick());
 			object.put("m_img", players.get(i).getM_img());
 			object.put("wins", players.get(i).getWins());
@@ -105,7 +106,11 @@ public class RoomSocket {
 		}
 		JSONObject obj = new JSONObject();
 		obj.put("data", array);
-		obj.put("function_name", "addplayer");
+		obj.put("function_name", "addplayer");	
+		
+		for(MemberDto tmp : players) {
+			System.out.println(tmp.toString());
+		}
 		
 		for(Session s : clients.keySet()) {
 			s.getBasicRemote().sendText(obj.toString());

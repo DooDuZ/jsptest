@@ -1,7 +1,22 @@
 
-let count_ready;
-let r_sno = document.querySelector('.r_sno');
+// 레디 카운팅 변수 -> 4일때(현재 test위해 3)
+let count_ready;	 
 
+
+/*  
+	슬롯 번호 저장 변수
+	변수를 js에 저장 후 가져오려고 하면 서버 -> js로 모든 유저의 정보(vector)를 전송
+	js에선 모든 유저 정보가 읽히므로 누가 어떤 버튼을 누를 수 있는지 식별 불가
+	
+	따라서 플레이어 추가 함수에서 세션의 id값과 받아온 데이터의 id값을 비교한 후,
+	같은 경우에만 html 숨겨진 태그에 슬롯 번호를 저장하고 다시 js 변수로 끌어와서 사용
+*/
+let r_sno = document.querySelector('.r_sno'); 
+
+
+
+// 20221101 지웅 ready 개수 체크
+	// onopen, ready, onclose 발생 시마다 호출
 function readyCounter(){
 	let count_r = 0; // ready 수 체크
 	for(let i = 1 ; i<=4 ; i++){
@@ -112,12 +127,14 @@ function enterKey(){
 }
 
 
-// 20221031
+// 20221031 지웅 추가
 function exit(){
 	location.href = 'index.jsp';
 }
 
 
+// 20221102 지웅 추가
+	// html에 저장된 슬롯 넘버로 본인 버튼 맞는지 검사
 function readybtn( s_no ){
 	if(s_no == r_sno.innerHTML){
 		let object = {
@@ -130,6 +147,8 @@ function readybtn( s_no ){
 	}	
 }
 
+
+// 20221101 지웅 ready <-> wait 전환
 function ready(s_no){
 	if(document.querySelector(`.r_ready_box${s_no}`).innerHTML != 'Ready'){
 		document.querySelector(`.r_ready_box${s_no}`).innerHTML = 'Ready';
@@ -139,6 +158,8 @@ function ready(s_no){
 	readyCounter();	
 }
 
+//20221101 지웅 추가
+	// 슬롯 넘버가 1이면 게임 시작 함수 실행
 function open_game(){
 	if(r_sno.innerHTML==1){
 		let object = {
@@ -154,12 +175,9 @@ function open_game(){
 	}
 }
 
+
+//20221101 지웅 추가
+	// 실행시 게임보드로 페이지 전환
 function start_game(){
 	location.href = 'gameBoard.jsp';
 }
-
-
-
-
-
-
